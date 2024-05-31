@@ -31,5 +31,8 @@ def testing(request):
     template = loader.get_template("template.html")
     context = {
         'mymembers': mymembers,
+        'x': 'Volvo',
+        'y': 'Ford',
+        'z': 'Fiat',
     }
     return HttpResponse(template.render(context, request)) #create an object named context and fill it with data, and send it as the first parameter in the template.render() function

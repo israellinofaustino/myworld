@@ -5,22 +5,65 @@
     <title>TESTING</title>
 </head>
 <body>
-    <h1>Hello {{ firstname }}, how are you?</h1> <!-- get the variable from views -->
-    {% for x in firstname %}
-      <h1>{{ x }}</h1>
-    {% endfor %}
 
-    <p>In views.py you can see what the fruits variable looks like.</p>
+<!--    <h1>Hello {{ firstname }}, how are you?</h1> &lt;!&ndash; get the variable from views &ndash;&gt;-->
+<!--    {% for x in firstname %}-->
+<!--      <h1>{{ x }}</h1>-->
+<!--    {% endfor %}-->
 
-{% with surname="Faustino" %}
-    <h2>Hi Sr. {{ surname }}, how are you?</h2>
-{% endwith %}
+<!--    <p>In views.py you can see what the fruits variable looks like.</p>-->
 
-<ul>
-    {% for x in mymembers %}
-    <li>{{ x.firstname }}</li>
-    {% endfor %}
-</ul>
+<!--{% with surname="Faustino" %}-->
+<!--    <h2>Hi Sr. {{ surname }}, how are you?</h2>-->
+<!--{% endwith %}-->
+
+<!--<ul>-->
+<!--    {% for x in mymembers %}-->
+<!--    <li>{{ x.firstname }}</li>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
+
+<!--{% if greeting == 1 %}-->
+<!--    <h1>Hello</h1>-->
+<!--{% else %}-->
+<!--    <h1>Bye</h1>-->
+<!--{% endif %}-->
+
+
+<!--<ul>-->
+<!--    {% for x in mymembers %}-->
+<!--        <li>{{ x.firstname }}</li>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
+
+
+<!--{% autoescape on %}-->
+<!--    <h1>Hello &lt;i&gt;my&lt;/i&gt; World!</h1>-->
+<!--{% endautoescape %}-->
+
+
+<!--<ul>-->
+<!--    {% for x in mymembers %}-->
+<!--    <li style='color:{% cycle 'red' 'green' 'blue' 'pink' 'purple' 'yellow' 'orange' %}'>-->
+<!--        {{ x.firstname }}-->
+<!--    </li>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
+
+
+
+<!--{% filter lower %}-->
+<!--    <h2>Have a great day!</h2>-->
+<!--{%endfilter%}-->
+
+<h3>{% firstof x y z %}</h3> <!-- The firstof tag returns the first argument that is not an empty variable. -->
+
+
+<h4>{% now "d-m-y G:i" %}</h4>
+<h4>{% now "D-M-Y G:i e" %}</h4>
+
+
+{% lorem 2 p %}
 
 </body>
 </html>
