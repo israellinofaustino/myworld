@@ -5,6 +5,7 @@
     <title>TESTING</title>
 </head>
 <body>
+{% include 'mymenu.html' with me='IS' sponsor='Life' %}
 
 <!--    <h1>Hello {{ firstname }}, how are you?</h1> &lt;!&ndash; get the variable from views &ndash;&gt;-->
 <!--    {% for x in firstname %}-->
@@ -63,7 +64,7 @@
 <!--<h4>{% now "D-M-Y G:i e" %}</h4>-->
 
 
-<!--{% lorem 2 p %}-->
+{% lorem 2 p %}
 
 
 <!--{% if '1' == 1 %}-->
@@ -91,25 +92,150 @@
 <!--{% endwith %}-->
 
 
-{% if x is not y %}
-    <h1>YES...</h1>
-{% else %}
-    <h1>NO!!!</h1>
-{% endif %}
+<!--{% if x is not y %}-->
+<!--    <h1>YES...</h1>-->
+<!--{% else %}-->
+<!--    <h1>NO!!!</h1>-->
+<!--{% endif %}-->
+
+
+
+<!--{% for x in mymembers reversed %}-->
+<!--    <h3>{{ x.id }}</h3>-->
+<!--    <p>-->
+<!--        {{ x.firstname }}-->
+<!--        {{ x.lastname }}-->
+<!--    </p>-->
+<!--{% endfor %}-->
+
+<!--<ul>-->
+<!--    {% for x in emptytestobject %}-->
+<!--        <li>{{ x.firstname }}</li>-->
+<!--    {% empty %}-->
+<!--        <li>No memebers</li>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
+
+
+<!--<ul>-->
+<!--    {% for x in mymembers %}-->
+<!--        <li>{{ forloop.counter }}</li>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
+
+
+<!--<ul>-->
+<!--    {% for x in mymembers %}-->
+<!--        <li>{{ forloop.counter0 }}</li>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
+
+
+
+<!--<ul>-->
+<!--    {% for x in mymembers %}-->
+<!--        <li {% if forloop.first %}-->
+<!--                style='background-color:lightblue;'-->
+<!--            {% endif %}>-->
+<!--            {{ x }}-->
+<!--        </li>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
 
 
 
 
+<!--<ul>-->
+<!--    {% for x in mymembers %}-->
+<!--        <li {% if forloop.last %}-->
+<!--                style='background-color:lightblue;'-->
+<!--            {% endif %}>-->
+<!--            {{ x }}-->
+<!--        </li>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
+
+
+
+<!--<ul>-->
+<!--    {% for x in mymembers %}-->
+<!--        <li>{{ forloop.revcounter }}</li>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
+
+
+
+<!--<ul>-->
+<!--    {% for x in mymembers %}-->
+<!--        <li>{{ forloop.revcounter0 }}</li>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
+
+
+
+<!--<table border="1">-->
+<!--    <tr>-->
+<!--        <th>ID</th>-->
+<!--        <th>FirstName</th>-->
+<!--        <th>LastName</th>-->
+<!--    </tr>-->
+<!--    {% for x in mymembers %}-->
+<!--        <tr>-->
+<!--            <td>{{ x.id }}</td>-->
+<!--            <td>{{ x.firstname }}</td>-->
+<!--            <td>{{ x.lastname }}</td>-->
+<!--        </tr>-->
+<!--    {% endfor %}-->
+<!--</table>-->
 
 
 
 
+<!--{% for x in membersfirstname %}-->
+<!--    <h2>{{ x }}</h2>-->
+<!--{% endfor %}-->
+
+
+<!--{% for x in user1 %}-->
+<!--    <h1>{{ x }}</h1>-->
+<!--{% endfor %}-->
 
 
 
 
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+    </tr>
+    {% for x in startwith %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.firstname }}</td>
+            <td>{{ x.lastname }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% lorem 1 p %}
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+    </tr>
+    {% for x in order %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.firstname }}</td>
+            <td>{{ x.lastname }}</td>
+        </tr>
+    {% endfor %}
+</table>
 
 
-
+{% include 'footer.html' %}
 </body>
 </html>
