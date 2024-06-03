@@ -9,198 +9,198 @@
 <body>
 {% include 'mymenu.html' with me='IS' sponsor='Life' %}
 
-<!--    <h1>Hello {{ firstname }}, how are you?</h1> &lt;!&ndash; get the variable from views &ndash;&gt;-->
-<!--    {% for x in firstname %}-->
-<!--      <h1>{{ x }}</h1>-->
-<!--    {% endfor %}-->
+    <h1>Hello {{ firstname }}, how are you?</h1> <!-- get the variable from views -->
+    {% for x in firstname %}
+      <h1>{{ x }}</h1>
+    {% endfor %}
 
-<!--    <p>In views.py you can see what the fruits variable looks like.</p>-->
+    <p>In views.py you can see what the fruits variable looks like.</p>
 
-<!--{% with surname="Faustino" %}-->
-<!--    <h2>Hi Sr. {{ surname }}, how are you?</h2>-->
-<!--{% endwith %}-->
+{% with surname="Faustino" %}
+    <h2>Hi Sr. {{ surname }}, how are you?</h2>
+{% endwith %}
 
-<!--<ul>-->
-<!--    {% for x in mymembers %}-->
-<!--    <li>{{ x.firstname }}</li>-->
-<!--    {% endfor %}-->
-<!--</ul>-->
+<ul>
+    {% for x in mymembers %}
+    <li>{{ x.firstname }}</li>
+    {% endfor %}
+</ul>
 
-<!--{% if greeting == 1 %}-->
-<!--    <h1>Hello</h1>-->
-<!--{% else %}-->
-<!--    <h1>Bye</h1>-->
-<!--{% endif %}-->
-
-
-<!--<ul>-->
-<!--    {% for x in mymembers %}-->
-<!--        <li>{{ x.firstname }}</li>-->
-<!--    {% endfor %}-->
-<!--</ul>-->
+{% if greeting == 1 %}
+    <h1>Hello</h1>
+{% else %}
+    <h1>Bye</h1>
+{% endif %}
 
 
-<!--{% autoescape on %}-->
-<!--    <h1>Hello &lt;i&gt;my&lt;/i&gt; World!</h1>-->
-<!--{% endautoescape %}-->
+<ul>
+    {% for x in mymembers %}
+        <li>{{ x.firstname }}</li>
+    {% endfor %}
+</ul>
 
 
-<!--<ul>-->
-<!--    {% for x in mymembers %}-->
-<!--    <li style='color:{% cycle 'red' 'green' 'blue' 'pink' 'purple' 'yellow' 'orange' %}'>-->
-<!--        {{ x.firstname }}-->
-<!--    </li>-->
-<!--    {% endfor %}-->
-<!--</ul>-->
+{% autoescape on %}
+    <h1>Hello &lt;i&gt;my&lt;/i&gt; World!</h1>
+{% endautoescape %}
+
+
+<ul>
+    {% for x in mymembers %}
+    <li style='color:{% cycle 'red' 'green' 'blue' 'pink' 'purple' 'yellow' 'orange' %}'>
+        {{ x.firstname }}
+    </li>
+    {% endfor %}
+</ul>
 
 
 
-<!--{% filter lower %}-->
-<!--    <h2>Have a great day!</h2>-->
-<!--{%endfilter%}-->
+{% filter lower %}
+    <h2>Have a great day!</h2>
+{%endfilter%}
 
-<!--<h3>{% firstof x y z %}</h3> &lt;!&ndash; The firstof tag returns the first argument that is not an empty variable. &ndash;&gt;-->
+<h3>{% firstof x y z %}</h3> <!-- The firstof tag returns the first argument that is not an empty variable. -->
 
 
-<!--<h4>{% now "d-m-y G:i" %}</h4>-->
-<!--<h4>{% now "D-M-Y G:i e" %}</h4>-->
+<h4>{% now "d-m-y G:i" %}</h4>
+<h4>{% now "D-M-Y G:i e" %}</h4>
 
 
 {% lorem 2 p %}
 
 
-<!--{% if '1' == 1 %}-->
-<!--    <h3>Hello!</h3>-->
-<!--{% elif 0 >= 1 %}-->
-<!--    <h3>World!</h3>-->
-<!--{% else %}-->
-<!--    <h3>Goodbye!</h3>-->
-<!--{% endif %}-->
+{% if '1' == 1 %}
+    <h3>Hello!</h3>
+{% elif 0 >= 1 %}
+    <h3>World!</h3>
+{% else %}
+    <h3>Goodbye!</h3>
+{% endif %}
 
 
-<!--{% if x is y %}-->
-<!--    <h3>YES!!</h3>-->
-<!--{% else %}-->
-<!--    <h3>NO!</h3>-->
-<!--{% endif %}-->
+{% if x is y %}
+    <h3>YES!!</h3>
+{% else %}
+    <h3>NO!</h3>
+{% endif %}
 
 
-<!--{% with var1=x var2=x %}-->
-<!--    {% if var1 is var2 %}-->
-<!--        <h2>YES!</h2>-->
-<!--    {% else %}-->
-<!--        <h2>NO!</h2>-->
-<!--    {% endif %}-->
-<!--{% endwith %}-->
+{% with var1=x var2=x %}
+    {% if var1 is var2 %}
+        <h2>YES!</h2>
+    {% else %}
+        <h2>NO!</h2>
+    {% endif %}
+{% endwith %}
 
 
-<!--{% if x is not y %}-->
-<!--    <h1>YES...</h1>-->
-<!--{% else %}-->
-<!--    <h1>NO!!!</h1>-->
-<!--{% endif %}-->
-
-
-
-<!--{% for x in mymembers reversed %}-->
-<!--    <h3>{{ x.id }}</h3>-->
-<!--    <p>-->
-<!--        {{ x.firstname }}-->
-<!--        {{ x.lastname }}-->
-<!--    </p>-->
-<!--{% endfor %}-->
-
-<!--<ul>-->
-<!--    {% for x in emptytestobject %}-->
-<!--        <li>{{ x.firstname }}</li>-->
-<!--    {% empty %}-->
-<!--        <li>No memebers</li>-->
-<!--    {% endfor %}-->
-<!--</ul>-->
-
-
-<!--<ul>-->
-<!--    {% for x in mymembers %}-->
-<!--        <li>{{ forloop.counter }}</li>-->
-<!--    {% endfor %}-->
-<!--</ul>-->
-
-
-<!--<ul>-->
-<!--    {% for x in mymembers %}-->
-<!--        <li>{{ forloop.counter0 }}</li>-->
-<!--    {% endfor %}-->
-<!--</ul>-->
+{% if x is not y %}
+    <h1>YES...</h1>
+{% else %}
+    <h1>NO!!!</h1>
+{% endif %}
 
 
 
-<!--<ul>-->
-<!--    {% for x in mymembers %}-->
-<!--        <li {% if forloop.first %}-->
-<!--                style='background-color:lightblue;'-->
-<!--            {% endif %}>-->
-<!--            {{ x }}-->
-<!--        </li>-->
-<!--    {% endfor %}-->
-<!--</ul>-->
+{% for x in mymembers reversed %}
+    <h3>{{ x.id }}</h3>
+    <p>
+        {{ x.firstname }}
+        {{ x.lastname }}
+    </p>
+{% endfor %}
+
+<ul>
+    {% for x in emptytestobject %}
+        <li>{{ x.firstname }}</li>
+    {% empty %}
+        <li>No memebers</li>
+    {% endfor %}
+</ul>
+
+
+<ul>
+    {% for x in mymembers %}
+        <li>{{ forloop.counter }}</li>
+    {% endfor %}
+</ul>
+
+
+<ul>
+    {% for x in mymembers %}
+        <li>{{ forloop.counter0 }}</li>
+    {% endfor %}
+</ul>
 
 
 
-
-<!--<ul>-->
-<!--    {% for x in mymembers %}-->
-<!--        <li {% if forloop.last %}-->
-<!--                style='background-color:lightblue;'-->
-<!--            {% endif %}>-->
-<!--            {{ x }}-->
-<!--        </li>-->
-<!--    {% endfor %}-->
-<!--</ul>-->
-
-
-
-<!--<ul>-->
-<!--    {% for x in mymembers %}-->
-<!--        <li>{{ forloop.revcounter }}</li>-->
-<!--    {% endfor %}-->
-<!--</ul>-->
-
-
-
-<!--<ul>-->
-<!--    {% for x in mymembers %}-->
-<!--        <li>{{ forloop.revcounter0 }}</li>-->
-<!--    {% endfor %}-->
-<!--</ul>-->
-
-
-
-<!--<table border="1">-->
-<!--    <tr>-->
-<!--        <th>ID</th>-->
-<!--        <th>FirstName</th>-->
-<!--        <th>LastName</th>-->
-<!--    </tr>-->
-<!--    {% for x in mymembers %}-->
-<!--        <tr>-->
-<!--            <td>{{ x.id }}</td>-->
-<!--            <td>{{ x.firstname }}</td>-->
-<!--            <td>{{ x.lastname }}</td>-->
-<!--        </tr>-->
-<!--    {% endfor %}-->
-<!--</table>-->
+<ul>
+    {% for x in mymembers %}
+        <li {% if forloop.first %}
+                style='background-color:lightblue;'
+            {% endif %}>
+            {{ x }}
+        </li>
+    {% endfor %}
+</ul>
 
 
 
 
-<!--{% for x in membersfirstname %}-->
-<!--    <h2>{{ x }}</h2>-->
-<!--{% endfor %}-->
+<ul>
+    {% for x in mymembers %}
+        <li {% if forloop.last %}
+                style='background-color:lightblue;'
+            {% endif %}>
+            {{ x }}
+        </li>
+    {% endfor %}
+</ul>
 
 
-<!--{% for x in user1 %}-->
-<!--    <h1>{{ x }}</h1>-->
-<!--{% endfor %}-->
+
+<ul>
+    {% for x in mymembers %}
+        <li>{{ forloop.revcounter }}</li>
+    {% endfor %}
+</ul>
+
+
+
+<ul>
+    {% for x in mymembers %}
+        <li>{{ forloop.revcounter0 }}</li>
+    {% endfor %}
+</ul>
+
+
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+    </tr>
+    {% for x in mymembers %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.firstname }}</td>
+            <td>{{ x.lastname }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+
+
+
+{% for x in membersfirstname %}
+    <h2>{{ x }}</h2>
+{% endfor %}
+
+
+{% for x in user1 %}
+    <h1>{{ x }}</h1>
+{% endfor %}
 
 
 
