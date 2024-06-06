@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <title>TESTING</title>
 </head>
-<link rel='stylesheet' href='{% static "style.css" %}'>
+{% comment %} <link rel='stylesheet' href='{% static "style.css" %}'> {% endcomment %}
+
+<link rel='stylesheet' href='{% static "myglobal.css" %}'> {% comment %} all application can access this .css {% endcomment %}
+
 <body>
 {% include 'mymenu.html' with me='IS' sponsor='Life' %}
 

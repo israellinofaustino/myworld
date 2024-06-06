@@ -5,11 +5,13 @@
 {% endblock %}
 
 {% block content %}
+<div class='mycard'>
     <h1>Members</h1>
     <ul>
       {% for x in mymembers %}
-      <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+        <li onclick="window.location = 'details/{{ x.id }}'">{{ x.firstname }} {{ x.lastname }}</li>
       {% endfor %}
     </ul>
     <h4><a href="/">BACK HOME</a></h4>
+</div>
 {% endblock %}
