@@ -1,17 +1,26 @@
 {% extends "master.html" %}
 
-{% block title %}
-    All Tennis Club Members
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block title %}
+  All Tennis Club Members
+  {% endblock %}
+</head>
 
-{% block content %}
-<div class='mycard'>
+<body>
+  {% block content %}
+  <div class='mycard'>
     <h1>Members</h1>
     <ul>
       {% for x in mymembers %}
-        <li onclick="window.location = 'details/{{ x.id }}'">{{ x.firstname }} {{ x.lastname }}</li>
+      <li onclick="window.location = 'details/{{ x.slug }}'">{{ x.firstname }} {{ x.lastname }}</li>
       {% endfor %}
     </ul>
     <h4><a href="/">BACK HOME</a></h4>
-</div>
-{% endblock %}
+  </div>
+  {% endblock %}
+</body>
+</html>
