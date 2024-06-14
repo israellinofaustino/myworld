@@ -1,6 +1,24 @@
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template import loader
 from .models import Member
+from .forms import PostForm
+
+
+
+def feedback(request):
+  if request.method == "POST":
+    form = PostForm(request.POST)
+    form.save()
+    return redirect("/")
+  else:
+    form = PostForm()
+  return render(request, "feedback.html", {"form": form})
+
+
+def homepage(request):
+  template = loader.get_template('master.html')
+  return HttpResponse(template.render())
 
 
 def members(request):

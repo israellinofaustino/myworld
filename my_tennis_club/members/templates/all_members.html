@@ -5,22 +5,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  {% block title %}
-  All Tennis Club Members
-  {% endblock %}
+  {% block title %}All Tennis Club Members{% endblock %}
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
 </head>
 
 <body>
-  {% block content %}
-  <div class='mycard'>
-    <h1>Members</h1>
-    <ul>
-      {% for x in mymembers %}
-      <li onclick="window.location = 'details/{{ x.slug }}'">{{ x.firstname }} {{ x.lastname }}</li>
-      {% endfor %}
-    </ul>
-    <h4><a href="/">BACK HOME</a></h4>
-  </div>
-  {% endblock %}
+{% block content%}
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">First Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for x in mymembers %}
+      <tr>
+        <td onclick="window.location = 'details/{{ x.slug }}'">{{ x.firstname }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock%}
 </body>
 </html>

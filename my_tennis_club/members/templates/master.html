@@ -4,30 +4,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}Home Page{% endblock %}</title>
     {% comment %} <link rel="stylesheet" href="{% static 'mystyles.css' %}"> {% endcomment %}
-    
-    {% comment %} Add bootstrap5 {% endcomment %}
     {% load bootstrap5 %}
     {% bootstrap_css %}
     {% bootstrap_javascript %}
     <link rel="icon" type="image/x-icon" href="{% static '/favicon.ico' %}">
 </head>
-<body>
-    <div class="container">
-        <ul class="nav bg-info">
+<body class="p-3 m-0 border-0 bd-example m-0 border-0">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" style="background-color: black;">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
           <li class="nav-item">
-            <a class="nav-link link-light" href="/">HOME</a>
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link-light" href="/members">MEMBERS</a>
+            <a class="nav-link" href="/members">Members</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link-light" href="/newmember">NEW MEMBER</a>
+            <a class="nav-link" href="/feedback">FeedBack</a>
           </li>
         </ul>
-        {% block content %}
-        {% endblock %}
+        <form class="d-flex" role="search">
+          <button class="btn btn-outline-success" type="button" onclick="window.location = '/admin/members/member/'">Admin</button>
+        </form>
       </div>
+    </div>
+  </nav>
+
+{% block content %}
+{% endblock %}
+
 </body>
 </html>
