@@ -14,4 +14,4 @@ def __str__(self):
 
 
 class FeedBack(models.Model):
-    text = models.CharField(max_length=1000)
+    text = models.CharField(max_length=1000, null=True)

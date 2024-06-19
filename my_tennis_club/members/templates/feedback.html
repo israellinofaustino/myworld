@@ -1,9 +1,12 @@
+{% extends "master.html" %}
+
+
 {% block content %}
-<form method="post">
-    <table/>
-        {{ form }}
-    </table>
-    {% csrf_token %}
-    <button type='submit'>Create</button>
-</form>
+    <form method="post">
+        <div class="mx-auto p-2">
+            {{ form }}
+        {% csrf_token %}
+        <button type='submit' class="btn btn-success">Send</button>
+        </div>
+    </form>
 {% endblock %}

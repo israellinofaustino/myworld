@@ -1,5 +1,4 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from .models import Member
 from .forms import PostForm
@@ -7,13 +6,17 @@ from .forms import PostForm
 
 
 def feedback(request):
+  template = loader.get_template('feedback.html')
   if request.method == "POST":
     form = PostForm(request.POST)
     form.save()
-    return redirect("/")
+    return HttpResponseRedirect("/")
   else:
     form = PostForm()
-  return render(request, "feedback.html", {"form": form})
+  contex = {
+    'form': form
+  }
+  return HttpResponse(template.render(contex, request))
 
 
 def homepage(request):
