@@ -3,10 +3,8 @@
 
 {% block content %}
     <form method="post">
-        <div class="mx-auto p-2">
-            {{ form }}
+        {{ form }}
         {% csrf_token %}
         <button type='submit' class="btn btn-success">Send</button>
-        </div>
     </form>
 {% endblock %}

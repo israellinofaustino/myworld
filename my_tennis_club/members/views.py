@@ -19,9 +19,11 @@ def feedback(request):
   return HttpResponse(template.render(contex, request))
 
 
+
 def homepage(request):
   template = loader.get_template('master.html')
   return HttpResponse(template.render())
+
 
 
 def members(request):
@@ -31,6 +33,7 @@ def members(request):
         'mymembers': mymembers, # create a object with all the values from mymembers object
     }
     return HttpResponse(template.render(contex, request))
+
 
 
 def details(request, slug):
